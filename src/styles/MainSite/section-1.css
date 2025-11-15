@@ -1,0 +1,135 @@
+/* ========================================
+   SECTION 1 - Finanse w jednym miejscu
+   Scroll-pinned animation with LONGER scroll
+   ======================================== */
+
+.section-1 {
+  position: relative;
+  width: 100%;
+  height: 400vh; /* Longer scroll duration */
+  background: #FFFFFF;
+}
+
+.section-1__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========================================
+   HEADING - Controlled by GSAP
+   ======================================== */
+
+.section-1__heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 130px;
+  font-weight: 600;
+  line-height: 143px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  margin: 0;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform, opacity;
+  opacity: 1;
+}
+
+.section-1__heading .heading-black {
+  color: #1A1A1A;
+}
+
+.section-1__heading .heading-red {
+  color: #E8404E;
+}
+
+/* ========================================
+   CARDS - Controlled by GSAP
+   ======================================== */
+
+.section-1__card {
+  position: absolute;
+  border-radius: 35px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  will-change: transform, opacity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section-1__card .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 35px;
+  pointer-events: none;
+}
+
+/* ========================================
+   CARD INITIAL POSITIONS
+   ======================================== */
+
+.section-1__card--placeholder {
+  top: 130px;
+  left: 130px;
+  width: 320px;
+  height: 280px;
+  z-index: 14;
+}
+
+.section-1__card--kantor {
+  bottom: 90px;
+  left: 240px;
+  width: 350px;
+  height: 280px;
+  z-index: 13;
+}
+
+.section-1__card--wyslij {
+  top: 50px;
+  right: 195px;
+  width: 320px;
+  height: 280px;
+  z-index: 12;
+}
+
+.section-1__card--wydatki {
+  bottom: 90px;
+  right: 195px;
+  width: 320px;
+  height: 300px;
+  z-index: 11;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1920px) {
+  .section-1__heading {
+    font-size: 6.77vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .section-1 {
+    height: 350vh;
+  }
+  
+  .section-1__heading {
+    font-size: 96px;
+    line-height: 106px;
+  }
+  
+  .section-1__card--placeholder,
+  .section-1__card--kantor,
+  .section-1__card--wyslij,
+  .section-1__card--wydatki {
+    width: 280px;
+  }
+}

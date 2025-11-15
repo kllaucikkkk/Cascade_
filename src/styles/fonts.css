@@ -1,0 +1,221 @@
+/* ========================================
+   INTER - Variable Font (all weights 400-900)
+   ======================================== */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Inter-Variable/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-named-instance: 'Regular';
+}
+
+/* ========================================
+   ROBOTO MONO - Variable Font (all weights 100-700)
+   ======================================== */
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url('/fonts/Roboto_Mono-Variable/RobotoMono-VariableFont_wght.ttf') format('truetype');
+}
+
+/* ========================================
+   SEQUEL SANS - Complete Family
+   Body = body text (regular spacing)
+   Head = headlines (tighter spacing)
+   Disp = display (loosest spacing)
+   ======================================== */
+
+/* --- Light (300) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Light Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Light Obl Body.otf') format('opentype');
+}
+
+/* --- Book/Regular (400) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Book Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Book Obl Body.otf') format('opentype');
+}
+
+/* --- Roman (450 - fallback to 400 if needed) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Roman Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 450;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Oblique Body.otf') format('opentype');
+}
+
+/* --- Medium (500) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Medium Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Medium Obl Body.otf') format('opentype');
+}
+
+/* --- Semi Bold (600) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Semi Bold Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Semi Bold Obl Body.otf') format('opentype');
+}
+
+/* --- Bold (700) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Bold Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Bold Obl Body.otf') format('opentype');
+}
+
+/* --- Heavy (800) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Heavy Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Heavy Obl Body.otf') format('opentype');
+}
+
+/* --- Black (900) --- */
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Black Body.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Black Obl Body.otf') format('opentype');
+}
+
+/* ========================================
+   SEQUEL SANS - HEADLINE VARIANTS
+   (Optional - use for large headings)
+   ======================================== */
+
+@font-face {
+  font-family: 'Sequel Sans Head';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Bold Head.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans Head';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Black Head.otf') format('opentype');
+}
+
+/* ========================================
+   SEQUEL SANS - DISPLAY VARIANTS
+   (Optional - use for hero text)
+   ======================================== */
+
+@font-face {
+  font-family: 'Sequel Sans Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Bold Disp.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sequel Sans Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/Sequel Sans/Sequel Sans Black Disp.otf') format('opentype');
+}
+
+/* ========================================
+   CSS VARIABLES
+   ======================================== */
+
+:root {
+  --font-heading: 'Sequel Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading-display: 'Sequel Sans Display', 'Sequel Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading-tight: 'Sequel Sans Head', 'Sequel Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Roboto Mono', 'Courier New', monospace;
+}

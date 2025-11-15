@@ -1,0 +1,291 @@
+/* ========================================
+   HERO SECTION - Cascade_ Landing Page
+   1920x1080px - Pink gradient background
+   ======================================== */
+
+.hero-cascade {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  background: linear-gradient(135deg, #F29CA3 0%, #EE9496 50%, #F4A7AB 100%);
+  overflow: hidden;
+}
+
+.hero-cascade__container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+  padding: 48px 60px;
+}
+
+/* ========================================
+   LOGO - Top Left
+   ======================================== */
+
+.hero-cascade__logo {
+  position: absolute;
+  top: 48px;
+  left: 60px;
+  font-family: var(--font-heading-display);
+  font-size: 48px;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.hero-cascade__logo:hover {
+  opacity: 0.85;
+}
+
+/* ========================================
+   TOP RIGHT ACTIONS - Language + Auth
+   ======================================== */
+
+.hero-cascade__actions {
+  position: absolute;
+  top: 48px;
+  right: 60px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Language Selector Button */
+.hero-cascade__lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-cascade__lang-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.hero-cascade__lang-btn .globe-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.hero-cascade__lang-btn .chevron {
+  font-size: 10px;
+  margin-left: -4px;
+  line-height: 1;
+}
+
+/* Secondary Button - Login */
+.hero-cascade__btn-secondary {
+  padding: 12px 28px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-cascade__btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Primary Button - Register */
+.hero-cascade__btn-primary {
+  padding: 12px 32px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: #E8718E;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-cascade__btn-primary:hover {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hero-cascade__btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   MAIN HEADING - Left Side, Vertically Centered
+   ======================================== */
+
+.hero-cascade__heading {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  font-family: var(--font-heading-display);
+  font-size: 96px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-cascade__heading .heading-line {
+  display: block;
+}
+
+.hero-cascade__heading .heading-highlight {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+}
+
+/* ========================================
+   TAGLINE - Right Side, Vertically Centered
+   ======================================== */
+
+.hero-cascade__tagline {
+  position: absolute;
+  top: 50%;
+  right: 180px;
+  transform: translateY(-50%);
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  margin: 0;
+}
+
+/* ========================================
+   CTA BUTTON - Bottom Left (Scroll Down)
+   ======================================== */
+
+.hero-cascade__cta {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-cascade__cta:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.hero-cascade__cta:active {
+  transform: translateY(0);
+}
+
+.hero-cascade__cta .lock-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* ========================================
+   RESPONSIVE (Optional - fallback dla <1920px)
+   ======================================== */
+
+@media (max-width: 1920px) {
+  .hero-cascade__container {
+    width: 100%;
+  }
+  
+  .hero-cascade__heading {
+    font-size: 5vw; /* Scaling dla mniejszych ekranów */
+  }
+  
+  .hero-cascade__tagline {
+    font-size: 1.67vw;
+    right: 9.375vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .hero-cascade {
+    height: 100vh;
+    min-height: 800px;
+  }
+  
+  .hero-cascade__container {
+    height: 100%;
+  }
+  
+  .hero-cascade__heading {
+    font-size: 82px;
+  }
+  
+  .hero-cascade__tagline {
+    font-size: 24px;
+    right: 120px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-cascade__heading {
+    font-size: 56px;
+  }
+  
+  .hero-cascade__tagline {
+    font-size: 20px;
+    right: 80px;
+  }
+  
+  .hero-cascade__logo {
+    font-size: 36px;
+  }
+}
+
+/* ========================================
+   ANIMATION STATES (used by GSAP)
+   ======================================== */
+
+.hero-cascade__heading .heading-line,
+.hero-cascade__tagline,
+.hero-cascade__cta,
+.hero-cascade__logo {
+  will-change: transform, opacity;
+}

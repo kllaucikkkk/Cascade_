@@ -1,0 +1,133 @@
+.section-2 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #FFFFFF;
+  margin-top: 65%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.section-2__container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 117px;
+  padding-right: 117px;
+  gap: 0px;
+  margin-bottom: -45px;
+  position: relative; /* <-- Dodane, aby z-index zadziałał */
+  z-index: 2;         /* <-- Wyższy z-index, aby ten element był na wierzchu */
+}
+
+.section-2__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-shrink: 0;
+  max-width: 580px;
+}
+
+.section-2__heading {
+  font-family: var(--font-heading);
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 90px;
+  letter-spacing: -0.03em;
+  color: #1d1d1f;
+  margin: 0;
+}
+
+.section-2__heading--underline {
+  position: relative;
+  display: inline-block;
+}
+
+.section-2__heading--underline::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: #E8404E;
+  z-index: -1;
+}
+
+.section-2__text {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #5A5A5A;
+  margin: 0;
+}
+
+.section-2__cards {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section-2__top-placeholder {
+  width: 465px; 
+  height: 380px;
+  background: #E5E5E7;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.section-2__bottom-placeholder {
+  width: calc(100% - 234px);
+  height: 380px;
+  background: #E5E5E7;
+  border-radius: 24px;
+  margin-left: 117px;
+  margin-right: 117px;
+  overflow: hidden;
+  position: relative; /* <-- Dodane, aby z-index zadziałał */
+  z-index: 1;         /* <-- Niższy z-index, aby ten element był pod spodem */
+}
+
+.section-2__placeholder-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1440px) {
+  .section-2__container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .section-2__bottom-placeholder {
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100% - 160px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-2__container {
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .section-2__cards {
+    align-items: stretch;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .section-2__top-placeholder {
+    width: 100%;
+  }
+  
+  .section-2__bottom-placeholder {
+     width: calc(100% - 80px);
+     margin-left: 40px;
+     margin-right: 40px;
+  }
+}
