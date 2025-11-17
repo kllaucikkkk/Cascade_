@@ -1,6 +1,6 @@
 import React from 'react';
 import Topbar from '../MainElements/Topbar';
-import '../../../styles/dashboard/Cards/cards.css';
+import '../../../styles/Dashboard/Cards/cards.css';
 
 const Cards = () => {
   return (

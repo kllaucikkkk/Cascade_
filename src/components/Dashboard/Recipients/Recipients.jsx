@@ -1,6 +1,6 @@
 import React from 'react';
 import Topbar from '../MainElements/Topbar';
-import '../../../styles/dashboard/Recipients/recipients.css';
+import '../../../styles/Dashboard/Recipients/recipients.css';
 
 const Recipients = () => {
   // docelowo tutaj będzie pobieranie odbiorców z backendu
