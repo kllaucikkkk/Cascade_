@@ -1,0 +1,253 @@
+.register-page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* LEFT SIDE */
+.register-page__form-section {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px;
+  background: #FFFFFF;
+}
+
+.register-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.register-page__logo {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d1d1f;
+  position: relative;
+}
+
+.register-page__logo-underline {
+  color: #E8404E;
+}
+
+.register-page__language-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #F5F5F7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register-page__form-container {
+  flex: 1;
+  max-width: 520px;
+}
+
+.register-page__heading {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  color: #1d1d1f;
+  margin: 0 0 40px 0;
+}
+
+.register-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+.register-page__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.register-page__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.register-page__input-icon {
+  position: absolute;
+  left: 16px;
+  pointer-events: none;
+}
+
+.register-page__input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 16px 16px 48px;
+  border: 1px solid #F2E9E9;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #1d1d1f;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.register-page__input:focus {
+  border-color: #E8404E;
+}
+
+.register-page__input::placeholder {
+  color: #C7C7CC;
+}
+
+.register-page__checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: #1d1d1f;
+  line-height: 1.4;
+  cursor: pointer;
+  margin: 0 0 7px 0;
+  font-family: var(--font-body);
+}
+
+.register-page__checkbox {
+  accent-color: #E8404E;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.register-page__checkbox-label a {
+  color: #E8404E;
+  text-decoration: none;
+}
+
+.register-page__submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #E8404E;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-bottom: 8px;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+
+.register-page__submit-btn:disabled {
+  background: #F5CDCD;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.register-page__login-link {
+  text-align: center;
+  font-size: 15px;
+  color: #1d1d1f;
+  margin: 14px 0 8px 0;
+  font-family: var(--font-body);
+}
+
+.register-page__login-link a {
+  color: #E8404E;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-page__footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.register-page__footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #86868B;
+}
+
+.register-page__footer-links a {
+  color: #86868B;
+  text-decoration: none;
+}
+
+.register-page__footer-links span {
+  color: #E5E5E7;
+}
+
+.register-page__copyright {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #C7C7CC;
+  margin: 0;
+}
+
+/* RIGHT SIDE - IMAGE ONLY */
+.register-page__hero-section {
+  width: 623px;
+  height: 637px;
+  margin: 40px 32px 32px 0px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.register-page__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .register-page {
+    flex-direction: column;
+  }
+
+  .register-page__form-section {
+    padding: 40px 40px;
+  }
+
+  .register-page__hero-section {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    max-width: 700px;
+    margin: 32px auto;
+  }
+
+  .register-page__hero-image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-page__form-section {
+    padding: 24px;
+  }
+
+  .register-page__heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

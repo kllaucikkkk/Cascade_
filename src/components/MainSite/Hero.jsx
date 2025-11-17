@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 function Hero() {
+  const navigate = useNavigate();
   const heroRef = useRef(null);
   const logoRef = useRef(null);
   const headingRef = useRef(null);
@@ -56,8 +58,18 @@ function Hero() {
             <span>PL</span>
             <span className="chevron">▼</span>
           </button>
-          <button className="hero-cascade__btn-secondary">Zaloguj się</button>
-          <button className="hero-cascade__btn-primary">Zarejestruj się</button>
+          <button 
+            className="hero-cascade__btn-secondary"
+            onClick={() => navigate('/login')}
+          >
+            Zaloguj się
+          </button>
+          <button 
+            className="hero-cascade__btn-primary"
+            onClick={() => navigate('/register')}
+          >
+            Zarejestruj się
+          </button>
         </div>
 
         {/* Main heading */}

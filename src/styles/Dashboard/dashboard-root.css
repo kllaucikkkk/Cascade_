@@ -1,0 +1,25 @@
+.dashboard-root {
+  display: flex;
+  min-height: 100vh;
+  background: #FEF5F4;
+  padding: 32px;
+  gap: 32px;
+}
+
+/* Sidebar jest oddzielnie stylowany w MainElements/sidebar.css */
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Opcjonalnie: ogólna stylizacja oraz spacing dla kart/widżetów, jeśli chcesz mieć jednolite marginesy */
+.dashboard-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: none; /* lub delikatny cień */
+  margin-bottom: 32px;
+}

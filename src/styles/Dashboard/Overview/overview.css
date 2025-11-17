@@ -1,0 +1,294 @@
+/* OVERVIEW LAYOUT */
+.overview-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  width: 100%;
+}
+
+.overview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.overview-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* BALANCE CARD */
+.balance-card {
+  background: linear-gradient(135deg, #e76f8f 0%, #ff9b73 100%);
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  overflow: visible;
+}
+
+.balance-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.balance-card__title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.balance-card__filters {
+  display: flex;
+  gap: 12px;
+}
+
+.balance-card__filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.balance-card__filter-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.balance-card__filter-btn.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+}
+
+/* INNER CARD 3D WRAPPER */
+.balance-card__inner-wrapper {
+  position: relative;
+}
+
+.balance-card__inner-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.balance-card__inner-bg.bg1 {
+  height: 100%;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.balance-card__inner-bg.bg2 {
+  height: 100%;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.balance-card__inner {
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px 32px;
+  backdrop-filter: blur(10px);
+}
+
+.balance-card__amount-section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.balance-card__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+}
+
+.balance-card__amount {
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.balance-card__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.balance-card__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #e8404e;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.balance-card__action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.balance-card__action-icon {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* TRANSACTIONS CARD */
+.transactions-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.transactions-card__title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 32px 0;
+}
+
+.transactions-card__empty {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.transactions-card__empty-title {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 12px 0;
+}
+
+.transactions-card__empty-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: #86868b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.transactions-card__link {
+  color: #e8404e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.transactions-card__link:hover {
+  text-decoration: underline;
+}
+
+/* IMAGE PLACEHOLDER CARD */
+.image-placeholder {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 380 / 200;
+}
+
+.image-placeholder__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Goals Placeholder */
+.goals-placeholder {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 0;
+  overflow: hidden;
+  width: 380px;
+  height: 360px;
+}
+
+.goals-placeholder__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .overview-content {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-sidebar {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .balance-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .balance-card__filters {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .balance-card__filter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .balance-card__actions {
+    flex-direction: column;
+  }
+
+  .balance-card__action-btn {
+    width: 100%;
+  }
+
+  .image-placeholder {
+    aspect-ratio: auto;
+    height: 200px;
+  }
+
+  .goals-placeholder {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 380 / 360;
+  }
+}

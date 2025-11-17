@@ -1,0 +1,237 @@
+.login-page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* LEFT SIDE - FORM */
+.login-page__form-section {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px;
+  background: #FFFFFF;
+}
+
+.login-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.login-page__logo {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: #1d1d1f;
+  position: relative;
+}
+
+.login-page__logo-underline {
+  color: #E8404E;
+}
+
+.login-page__language-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #F5F5F7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-page__form-container {
+  flex: 1;
+  max-width: 520px;
+}
+
+.login-page__heading {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  color: #1d1d1f;
+  margin: 0 0 40px 0;
+}
+
+.login-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.login-page__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-page__label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #86868B;
+}
+
+.login-page__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-page__input-icon {
+  position: absolute;
+  left: 16px;
+  pointer-events: none;
+}
+
+.login-page__input {
+  width: 100%;
+  padding: 16px 16px 16px 48px;
+  border: 1px solid #E5E5E7;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #1d1d1f;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.login-page__input::placeholder {
+  color: #C7C7CC;
+}
+
+.login-page__input:focus {
+  border-color: #E8404E;
+}
+
+.login-page__forgot-password {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #E8404E;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.login-page__register-link {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #1d1d1f;
+  text-align: center;
+  margin: 0;
+}
+
+.login-page__register-link a {
+  color: #E8404E;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-page__submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #E8404E;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.login-page__submit-btn:hover {
+  background: #D63840;
+}
+
+.login-page__footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.login-page__footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #86868B;
+}
+
+.login-page__footer-links a {
+  color: #86868B;
+  text-decoration: none;
+}
+
+.login-page__footer-links span {
+  color: #E5E5E7;
+}
+
+.login-page__copyright {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #C7C7CC;
+  margin: 0;
+}
+
+/* RIGHT SIDE - IMAGE ONLY */
+.login-page__hero-section {
+  width: 623px;
+  height: 637px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 32px 32px 0px;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid teal; // opcjonalnie, usuń po testach */
+}
+
+.login-page__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-page__form-section {
+    padding: 40px 40px;
+  }
+
+  .login-page__hero-section {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    max-width: 787px;
+  }
+
+  .login-page__hero-image {
+    width: 100%;
+    max-width: 615px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page__form-section {
+    padding: 24px;
+  }
+
+  .login-page__heading {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

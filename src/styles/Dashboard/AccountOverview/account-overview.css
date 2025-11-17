@@ -1,0 +1,247 @@
+.account-overview {
+  width: 100%;
+}
+
+/* Hero Section - SVG Background */
+.account-overview__hero-section {
+  background-image: url('/assets/images/AccountBackground.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 28px;
+  padding: 48px;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-height: 420px;
+}
+
+/* Hero Header */
+.account-overview__hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* === Wymuszony font Inter dla kluczowych tekstów === */
+.account-overview__hero-title,
+.account-overview__card-title,
+.account-overview__card-amount {
+  font-family: 'Inter', Arial, sans-serif !important;
+}
+
+.account-overview__hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.account-overview__add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #fff;
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: #E8404E;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.account-overview__add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Large Glassmorphic Card */
+.account-overview__hero-card {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  margin: 0 350px 0 0;
+  padding: 40px;
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  min-height: 200px;
+}
+
+.account-overview__card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.account-overview__card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.account-overview__card-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(8px);
+}
+
+.account-overview__card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.account-overview__card-amount {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -1px;
+  margin-left: 0;
+}
+
+/* === NOWA SEKCJA Z TŁem (takie samo jak hero) === */
+.account-overview__main-section {
+  background: #fff;
+  border-radius: 28px;
+  padding: 48px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Section Title */
+.account-overview__section-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 24px 0;
+}
+
+/* Content Tabs */
+.account-overview__content-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #F2F2F7;
+}
+
+.account-overview__content-tab {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #86868b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: -2px;
+}
+
+.account-overview__content-tab.active {
+  color: #3D1F0A;
+  border-bottom-color: #3D1F0A;
+  font-weight: 600;
+}
+
+.account-overview__content-tab:hover:not(.active) {
+  color: #1d1d1f;
+}
+
+/* Empty State */
+.account-overview__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  text-align: center;
+  min-height: 300px;
+}
+
+.account-overview__empty-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 12px 0;
+}
+
+.account-overview__empty-description {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #86868b;
+  margin: 0;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.account-overview__empty-link {
+  color: #E8404E;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.account-overview__empty-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .account-overview__hero-section,
+  .account-overview__main-section {
+    padding: 32px;
+    min-height: auto;
+    gap: 24px;
+  }
+
+  .account-overview__hero-title {
+    font-size: 32px;
+  }
+
+  .account-overview__hero-card {
+    padding: 28px;
+    margin: 0;
+    min-height: 160px;
+  }
+
+  .account-overview__card-title {
+    font-size: 18px;
+  }
+
+  .account-overview__card-amount {
+    font-size: 32px;
+  }
+
+  .account-overview__add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .account-overview__empty {
+    padding: 60px 24px;
+  }
+}

@@ -5,6 +5,19 @@
 @import './styles/MainSite/section-3.css';
 @import './styles/MainSite/section-4.css';
 @import './styles/MainSite/footer.css';
+@import './styles/LoginForm/login.css';
+@import './styles/RegisterForm/register.css';
+
+/* Dashboard imports */
+@import './styles/Dashboard/dashboard-root.css';
+@import './styles/Dashboard/MainElements/sidebar.css';
+@import './styles/Dashboard/MainElements/topbar.css';
+@import './styles/Dashboard/Overview/overview.css';
+@import './styles/Dashboard/TransactionOverview/transaction-overview.css';
+@import './styles/Dashboard/AccountOverview/account-overview.css';
+@import './styles/Dashboard/Goals/goals.css';
+@import './styles/Dashboard/Recipients/recipients.css';
+@import './styles/Dashboard/Cards/cards.css';
 
 * {
   margin: 0;
