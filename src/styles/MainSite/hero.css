@@ -1,133 +1,151 @@
+:root {
+  /* ================== ZDEFINIUJ ZMIENNE TUTAJ ================== */
+  
+  /* Kolory */
+  --color-hero-text: #FFFFFF;
+  --color-hero-secondary-border: #FFFFFF;
+  --color-hero-primary-bg: #FFFFFF;
+  --color-hero-primary-text: #F84D35;
+
+  /* Typografia - ZMIANA TUTAJ */
+  --font-heading-display: 'Sequel Sans Display', Arial, sans-serif;
+  --font-body: 'Sequel Sans', Arial, sans-serif;
+  
+  /* Rozmiary czcionek */
+  --hero-logo-size: 44px;
+  --hero-logo-size-md: 40px;
+  --hero-logo-size-sm: 36px;
+  --hero-logo-size-xs: 32px;
+  --hero-logo-size-xxs: 28px;
+  --hero-button-font: 16px;
+  --hero-button-font-sm: 14px;
+  --hero-button-font-xs: 12px;
+  --hero-heading-size: 112px;
+  --hero-heading-size-md: 96px;
+  --hero-heading-size-sm: 76px;
+  --hero-heading-size-xs: 48px;
+  --hero-heading-size-xxs: 36px;
+
+  /* Układ i Spacing */
+  --grid-width: 1600px;
+  --grid-margin: 80px;
+  --80: 80px;
+  --56: 56px;
+  --48: 48px;
+  --40: 40px;
+  --32: 32px;
+  --24: 24px;
+  --20: 20px;
+  --16: 16px;
+  --12: 12px;
+  --8: 8px;
+}
+
 /* ========================================
    HERO SECTION - Cascade_ Landing Page
-   1920x1080px - Pink gradient background
    ======================================== */
 
 .hero-cascade {
   position: relative;
   width: 100%;
-  height: 1080px;
-  background: linear-gradient(135deg, #F29CA3 0%, #EE9496 50%, #F4A7AB 100%);
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.hero-cascade__section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .hero-cascade__container {
   position: relative;
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  max-width: var(--grid-width);
+  height: 100%;
   margin: 0 auto;
-  padding: 48px 60px;
+  padding: var(--56) var(--grid-margin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* ========================================
-   LOGO - Top Left
+   LOGO & ACTIONS
    ======================================== */
 
 .hero-cascade__logo {
   position: absolute;
-  top: 48px;
-  left: 60px;
+  top: var(--56);
+  left: var(--grid-margin);
   font-family: var(--font-heading-display);
-  font-size: 48px;
+  font-size: var(--hero-logo-size);
   font-weight: 900;
-  color: #FFFFFF;
+  color: var(--color-hero-text);
   letter-spacing: -0.02em;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  z-index: 10;
 }
 
 .hero-cascade__logo:hover {
   opacity: 0.85;
 }
 
-/* ========================================
-   TOP RIGHT ACTIONS - Language + Auth
-   ======================================== */
-
 .hero-cascade__actions {
   position: absolute;
-  top: 48px;
-  right: 60px;
+  top: var(--56);
+  right: var(--grid-margin);
   display: flex;
-  gap: 16px;
+  gap: var(--16);
   align-items: center;
+  z-index: 10;
 }
 
-/* Language Selector Button */
-.hero-cascade__lang-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+.hero-cascade__btn-secondary,
+.hero-cascade__btn-primary {
+  padding: 14px 32px;
   border-radius: 12px;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--hero-button-font);
   font-weight: 600;
-  color: #FFFFFF;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
-.hero-cascade__lang-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-1px);
-}
+/* Secondary */
 
-.hero-cascade__lang-btn .globe-icon {
-  font-size: 18px;
-  line-height: 1;
-}
-
-.hero-cascade__lang-btn .chevron {
-  font-size: 10px;
-  margin-left: -4px;
-  line-height: 1;
-}
-
-/* Secondary Button - Login */
 .hero-cascade__btn-secondary {
-  padding: 12px 28px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 600;
-  color: #FFFFFF;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  background: transparent;
+  border: 2px solid var(--color-hero-secondary-border);
+  color: var(--color-hero-text);
 }
 
 .hero-cascade__btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-1px);
 }
 
-/* Primary Button - Register */
+/* Primary */
+
 .hero-cascade__btn-primary {
-  padding: 12px 32px;
-  background: rgba(255, 255, 255, 0.95);
+  padding: 14px 36px;
+  background: var(--color-hero-primary-bg);
   border: none;
-  border-radius: 12px;
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 600;
-  color: #E8718E;
+  color: var(--color-hero-primary-text);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .hero-cascade__btn-primary:hover {
-  background: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
@@ -138,154 +156,224 @@
 }
 
 /* ========================================
-   MAIN HEADING - Left Side, Vertically Centered
+   HEADING – ABSOLUTE AT BOTTOM
    ======================================== */
 
 .hero-cascade__heading {
   position: absolute;
-  top: 50%;
-  left: 60px;
-  transform: translateY(-50%);
+  bottom: calc(var(--80) + 10vh);
+  left: var(--grid-margin);
   font-family: var(--font-heading-display);
-  font-size: 96px;
+  font-size: var(--hero-heading-size);
+  /* ZMIANA TUTAJ */
   font-weight: 600;
-  line-height: 1.15;
-  color: #FFFFFF;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-hero-text);
+  letter-spacing: -0.025em;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
+  text-align: left;
+  max-width: calc(100% - 2 * var(--grid-margin));
+  word-break: break-word;
+  overflow-wrap: break-word;
+  z-index: 3;
 }
 
 .hero-cascade__heading .heading-line {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--12);
+  max-width: 100%;
 }
 
-.hero-cascade__heading .heading-highlight {
-  color: rgba(255, 255, 255, 0.7);
+.hero-cascade__heading .word {
+  /* ZMIANA TUTAJ */
+  font-weight: 600;
+}
+
+.hero-cascade__heading .word.bold {
   font-weight: 700;
 }
 
+.hero-cascade__heading .word.light {
+  font-weight: 300;
+  opacity: 0.7;
+}
+
 /* ========================================
-   TAGLINE - Right Side, Vertically Centered
+   FLIP WORD
    ======================================== */
 
-.hero-cascade__tagline {
-  position: absolute;
-  top: 50%;
-  right: 180px;
-  transform: translateY(-50%);
-  font-family: var(--font-body);
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
+.flip-container {
   text-align: left;
-  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.flip-word-inner {
+  display: inline-block;
+}
+
+.flip-letter {
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  transition: opacity 0.15s, filter 0.15s;
+}
+
+.flip-dot {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-left: 0;
 }
 
 /* ========================================
-   CTA BUTTON - Bottom Left (Scroll Down)
+   RESPONSIVE
    ======================================== */
 
-.hero-cascade__cta {
-  position: absolute;
-  bottom: 60px;
-  left: 60px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 32px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 14px;
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 600;
-  color: #FFFFFF;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.hero-cascade__cta:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
-}
-
-.hero-cascade__cta:active {
-  transform: translateY(0);
-}
-
-.hero-cascade__cta .lock-icon {
-  font-size: 20px;
-  line-height: 1;
-}
-
-/* ========================================
-   RESPONSIVE (Optional - fallback dla <1920px)
-   ======================================== */
-
-@media (max-width: 1920px) {
-  .hero-cascade__container {
-    width: 100%;
-  }
-  
+@media (max-width: 1600px) {
   .hero-cascade__heading {
-    font-size: 5vw; /* Scaling dla mniejszych ekranów */
-  }
-  
-  .hero-cascade__tagline {
-    font-size: 1.67vw;
-    right: 9.375vw;
+    font-size: var(--hero-heading-size-md);
   }
 }
 
 @media (max-width: 1440px) {
-  .hero-cascade {
-    height: 100vh;
-    min-height: 800px;
-  }
-  
   .hero-cascade__container {
-    height: 100%;
+    padding: var(--48) var(--grid-margin);
   }
-  
+
+  .hero-cascade__logo {
+    top: var(--48);
+    left: var(--grid-margin);
+    font-size: var(--hero-logo-size-md);
+  }
+
+  .hero-cascade__actions {
+    top: var(--48);
+    right: var(--grid-margin);
+  }
+
   .hero-cascade__heading {
-    font-size: 82px;
+    bottom: calc(70px + 10vh);
+    left: var(--grid-margin);
+    font-size: 88px;
+    max-width: calc(100% - 2 * var(--grid-margin));
   }
-  
-  .hero-cascade__tagline {
-    font-size: 24px;
-    right: 120px;
+}
+
+@media (max-width: 1280px) {
+  .hero-cascade__heading {
+    bottom: calc(60px + 10vh);
+    left: var(--grid-margin);
+    font-size: var(--hero-heading-size-sm);
   }
 }
 
 @media (max-width: 1024px) {
-  .hero-cascade__heading {
-    font-size: 56px;
+  .hero-cascade__container {
+    padding: var(--40) var(--48);
   }
-  
-  .hero-cascade__tagline {
-    font-size: 20px;
-    right: 80px;
-  }
-  
+
   .hero-cascade__logo {
-    font-size: 36px;
+    top: var(--40);
+    left: var(--48);
+    font-size: var(--hero-logo-size-sm);
+  }
+
+  .hero-cascade__actions {
+    top: var(--40);
+    right: var(--48);
+  }
+
+  .hero-cascade__heading {
+    bottom: calc(50px + 10vh);
+    left: var(--48);
+    font-size: 64px;
+    max-width: calc(100% - 2 * var(--48));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cascade__container {
+    padding: var(--32) var(--40);
+  }
+
+  .hero-cascade__logo {
+    top: var(--32);
+    left: var(--40);
+    font-size: var(--hero-logo-size-xs);
+  }
+
+  .hero-cascade__actions {
+    top: var(--32);
+    right: var(--40);
+    gap: var(--12);
+  }
+
+  .hero-cascade__btn-secondary,
+  .hero-cascade__btn-primary {
+    padding: 12px 24px;
+    font-size: var(--hero-button-font-sm);
+  }
+
+  .hero-cascade__heading {
+    bottom: calc(40px + 10vh);
+    left: var(--40);
+    font-size: var(--hero-heading-size-xs);
+    max-width: calc(100% - 2 * var(--40));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cascade__container {
+    padding: var(--24) var(--20);
+  }
+
+  .hero-cascade__logo {
+    top: var(--24);
+    left: var(--20);
+    font-size: var(--hero-logo-size-xxs);
+  }
+
+  .hero-cascade__actions {
+    top: var(--24);
+    right: var(--20);
+    gap: var(--8);
+  }
+
+  .hero-cascade__btn-secondary,
+  .hero-cascade__btn-primary {
+    padding: 10px 16px;
+    font-size: var(--hero-button-font-xs);
+  }
+
+  .hero-cascade__heading {
+    bottom: calc(30px + 10vh);
+    left: var(--20);
+    font-size: var(--hero-heading-size-xxs);
+    max-width: calc(100% - 2 * var(--20));
+  }
+
+  .hero-cascade__heading .heading-line {
+    gap: var(--8);
   }
 }
 
 /* ========================================
-   ANIMATION STATES (used by GSAP)
+   ANIMATION STATES (GSAP)
    ======================================== */
 
 .hero-cascade__heading .heading-line,
-.hero-cascade__tagline,
-.hero-cascade__cta,
 .hero-cascade__logo {
   will-change: transform, opacity;
 }

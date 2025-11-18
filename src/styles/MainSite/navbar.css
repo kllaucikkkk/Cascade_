@@ -1,0 +1,76 @@
+/* Root nav – doklejony do dołu, centralnie */
+.nav-root {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(386px, 100% - 48px);
+  pointer-events: none;
+  z-index: 40;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Dolny pasek */
+.nav-bar {
+  pointer-events: auto;
+  background: #f84d35;
+  border-radius: 999px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
+  height: 64px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* HOME */
+.nav-home-btn {
+  width: 56px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: #f95f4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Linki inline (Osobiste / Firmowe / O nas) */
+.nav-inline-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.nav-inline-btn,
+.nav-inline-link {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* lekkie wyróżnienie pierwszej pozycji – jak „Personal” w Jeton */
+.nav-inline-btn:first-of-type {
+  position: relative;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Hovery (opcjonalnie) */
+.nav-inline-btn:hover,
+.nav-inline-link:hover,
+.nav-home-btn:hover {
+  opacity: 0.85;
+}

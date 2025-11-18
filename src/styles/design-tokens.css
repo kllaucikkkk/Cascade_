@@ -1,0 +1,83 @@
+/* SPACING TOKENS */
+:root {
+  --4: 4px;
+  --8: 8px;
+  --12: 12px;
+  --16: 16px;
+  --20: 20px;
+  --24: 24px;
+  --32: 32px;
+  --48: 48px;
+  --60: 60px;
+  --80: 80px;
+  --140: 140px;
+
+  /* RESPONSIVE PAIRS (desktop-mobile) */
+  --20-12: clamp(12px, 10px + 1vw, 20px);
+  --32-16: clamp(16px, 14px + 1vw, 32px);
+  --60-16: clamp(16px, 12px + 2vw, 60px);
+  --80-40: clamp(40px, 30px + 2.5vw, 80px);
+  --140-60: clamp(60px, 40px + 3vw, 140px);
+
+  /* GRID SYSTEM */
+  --grid-width: 100%;
+  --grid-gap: 16px;
+  --grid-margin: 80px;
+  --cols-1: calc(100% / 16);
+  --cols-4: calc(25% - calc(var(--grid-gap) * 3 / 4));
+  --cols-5: calc(31.25% - calc(var(--grid-gap) * 4 / 5));
+  --cols-10: calc(62.5% - calc(var(--grid-gap) * 9 / 10));
+
+  /* COLORS */
+  --color-primary: #E25683;
+  --color-secondary: #F6B9A2;
+  --color-accent: #fdcbc4;
+  --color-text: #fff;
+  --color-text-light: rgba(255, 255, 255, 0.7);
+
+  /* HERO COMPONENT TOKENS (aliasy, 1:1 jak w CSS) */
+  --hero-heading-size: 112px;
+  --hero-heading-size-md: 96px;
+  --hero-heading-size-sm: 76px;
+
+  --hero-logo-size: 44px;
+  --hero-button-font: 16px;
+
+  --color-hero-text: #ffffff;
+  --color-hero-primary-bg: #ffffff;
+  --color-hero-primary-text: #E8718E;
+  --color-hero-secondary-border: rgba(255, 255, 255, 0.4);
+
+  /* RESPONSIVE VIEWPORT */
+  --100vw: 100vw;
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1440px) {
+  :root {
+    --grid-margin: 60px;
+    --hero-heading-size: var(--hero-heading-size-md); /* 96px */
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --grid-margin: 48px;
+    --grid-width: calc(100% - 96px);
+    --hero-heading-size: var(--hero-heading-size-sm); /* 76px */
+  }
+}
+
+@media (max-width: 743px) {
+  :root {
+    --grid-margin: 20px;
+    --grid-width: calc(100% - 40px);
+  }
+}
+
+@media (min-width: 2000px) {
+  :root {
+    --80: 4vw;
+    --140: 7vw;
+  }
+}

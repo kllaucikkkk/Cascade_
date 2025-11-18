@@ -1,19 +1,33 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import api from '../../config/api';
 
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login:', { email, password });
+    setError('');
+
+    try {
+      const result = await api.login(email, password);
+
+      if (result.token) {
+        localStorage.setItem('token', result.token);
+        navigate('/dashboard'); // zmień jeśli masz inną stronę
+      } else {
+        setError(result.message || 'Błędne dane logowania');
+      }
+    } catch (err) {
+      setError('Błąd serwera: ' + err.message);
+    }
   };
 
   return (
     <div className="login-page">
-      {/* Left Side - Form */}
       <div className="login-page__form-section">
         <div className="login-page__header">
           <div className="login-page__logo">
@@ -29,14 +43,13 @@ function Login() {
 
         <div className="login-page__form-container">
           <h1 className="login-page__heading">Zaloguj się</h1>
+
+          {error && <p style={{ color: 'red', marginBottom: '10px' }}>{error}</p>}
+
           <form className="login-page__form" onSubmit={handleSubmit}>
             <div className="login-page__input-group">
               <label className="login-page__label">E-mail</label>
               <div className="login-page__input-wrapper">
-                <svg className="login-page__input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M3 4H17C17.55 4 18 4.45 18 5V15C18 15.55 17.55 16 17 16H3C2.45 16 2 15.55 2 15V5C2 4.45 2.45 4 3 4Z" stroke="#86868B" strokeWidth="1.5"/>
-                  <path d="M18 5L10 11L2 5" stroke="#86868B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
                 <input
                   type="email"
                   className="login-page__input"
@@ -51,10 +64,6 @@ function Login() {
             <div className="login-page__input-group">
               <label className="login-page__label">Hasło</label>
               <div className="login-page__input-wrapper">
-                <svg className="login-page__input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 13V11M6 16H14C15.1046 16 16 15.1046 16 14V10C16 8.89543 15.1046 8 14 8H6C4.89543 8 4 8.89543 4 10V14C4 15.1046 4.89543 16 6 16Z" stroke="#86868B" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M7 8V6C7 4.34315 8.34315 3 10 3C11.6569 3 13 4.34315 13 6V8" stroke="#86868B" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
                 <input
                   type="password"
                   className="login-page__input"
@@ -66,7 +75,7 @@ function Login() {
               </div>
             </div>
 
-            <a href="#" className="login-page__forgot-password">Zapomniałeś hasła?</a>
+            <a className="login-page__forgot-password">Zapomniałeś hasła?</a>
 
             <p className="login-page__register-link">
               Nie masz konta? <a onClick={() => navigate('/register')} style={{ cursor: 'pointer' }}>Zarejestruj się</a>
@@ -80,19 +89,18 @@ function Login() {
 
         <div className="login-page__footer">
           <div className="login-page__footer-links">
-            <a href="#">Polityka prywatności</a>
+            <a>Polityka prywatności</a>
             <span>•</span>
-            <a href="#">Polityka plików cookie</a>
+            <a>Polityka plików cookie</a>
             <span>•</span>
-            <a href="#">Zasady i warunki</a>
+            <a>Zasady i warunki</a>
             <span>•</span>
-            <a href="#">Wsparcie</a>
+            <a>Wsparcie</a>
           </div>
           <p className="login-page__copyright">© 2025 Cascade_</p>
         </div>
       </div>
 
-      {/* Right Side - Image */}
       <div className="login-page__hero-section">
         <img
           src="/assets/images/Login-Register-illustration.svg"

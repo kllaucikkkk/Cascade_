@@ -1,5 +1,8 @@
 @import './styles/fonts.css';
+@import './styles/design-tokens.css';
 @import './styles/MainSite/hero.css';
+@import './styles/MainSite/navbar.css';
+@import './styles/MainSite/floating-nav.css';
 @import './styles/MainSite/section-1.css';
 @import './styles/MainSite/section-2.css';
 @import './styles/MainSite/section-3.css';
