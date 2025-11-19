@@ -23,8 +23,10 @@ function Register() {
     try {
       const result = await api.register(email, password, name, country);
 
-      if (result.message === 'Registration successful') {
-        navigate('/login');
+      // Sprawdzaj czy rejestracja się powiodła - niezależnie od dokładnej treści message
+      if (result.success !== false && !result.error) {
+        // Przekieruj do panelu weryfikacji z emailem
+        navigate('/register/verify', { state: { email } });
       } else {
         setError(result.message || 'Rejestracja nie powiodła się');
       }

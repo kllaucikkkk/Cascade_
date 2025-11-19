@@ -9,4 +9,10 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  server: {
+    proxy: {
+      // Przekieruj każde zapytanie zaczynające się od /api do backendu na porcie 5000
+      '/api': 'http://localhost:5000',
+    },
+  },
 });

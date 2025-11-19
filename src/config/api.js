@@ -23,6 +23,16 @@ export const api = {
     return data;
   },
 
+  // ❗️ DODAJ TĘ NOWĄ METODĘ ❗️
+  sendVerificationCode: async (email, code) => {
+    const response = await fetch(`${API_BASE_URL}/send-code`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ to: email, code })
+    });
+    return response.json();
+  },
+
   getDashboard: async () => {
     const token = localStorage.getItem('token');
     const response = await fetch(`${API_BASE_URL}/dashboard/overview`, {

@@ -11,6 +11,9 @@
 @import './styles/LoginForm/login.css';
 @import './styles/RegisterForm/register.css';
 
+/* Register Verification Panel import */
+@import './styles/RegisterVerification/RegisterVerificationPanel.css';
+
 /* Dashboard imports */
 @import './styles/Dashboard/dashboard-root.css';
 @import './styles/Dashboard/MainElements/sidebar.css';
@@ -21,6 +24,8 @@
 @import './styles/Dashboard/Goals/goals.css';
 @import './styles/Dashboard/Recipients/recipients.css';
 @import './styles/Dashboard/Cards/cards.css';
+/* NOWY IMPORT: Ustawienia */
+@import './styles/Dashboard/Settings/Settings.css';
 
 * {
   margin: 0;

@@ -1,4 +1,3 @@
-// src/App.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FloatingNav } from "./components/ui/FloatingNav";
 
@@ -11,6 +10,7 @@ import Footer from "./components/MainSite/Footer";
 
 import Login from "./components/LoginForm/Login";
 import Register from "./components/RegisterForm/Register";
+import RegisterVerificationPanel from "./components/RegisterVerification/RegisterVerificationPanel";
 
 import Overview from "./components/Dashboard/Overview/Overview";
 import TransactionOverview from "./components/Dashboard/TransactionOverview/TransactionOverview";
@@ -18,6 +18,7 @@ import AccountOverview from "./components/Dashboard/AccountOverview/AccountOverv
 import Goals from "./components/Dashboard/Goals/Goals";
 import Recipients from "./components/Dashboard/Recipients/Recipients";
 import Cards from "./components/Dashboard/Cards/Cards";
+import Settings from "./components/Dashboard/Settings/Settings";
 import DashboardLayout from "./components/Dashboard/DashboardLayout";
 
 import "./index.css";
@@ -52,7 +53,9 @@ function App() {
           <Route path="/" element={<MainSite />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+          {/* Panel weryfikacji - email przekazywany przez navigate state */}
+          <Route path="/register/verify" element={<RegisterVerificationPanel />} />
+          
           <Route
             path="/dashboard"
             element={
@@ -61,7 +64,6 @@ function App() {
               </DashboardLayout>
             }
           />
-
           <Route
             path="/transactions"
             element={
@@ -70,7 +72,6 @@ function App() {
               </DashboardLayout>
             }
           />
-
           <Route
             path="/accounts"
             element={
@@ -79,7 +80,6 @@ function App() {
               </DashboardLayout>
             }
           />
-
           <Route
             path="/goals"
             element={
@@ -88,7 +88,6 @@ function App() {
               </DashboardLayout>
             }
           />
-
           <Route
             path="/account/recipients"
             element={
@@ -97,12 +96,20 @@ function App() {
               </DashboardLayout>
             }
           />
-
           <Route
             path="/cards"
             element={
               <DashboardLayout>
                 <Cards />
+              </DashboardLayout>
+            }
+          />
+          {/* NOWA ŚCIEŻKA: Ustawienia */}
+          <Route
+            path="/settings"
+            element={
+              <DashboardLayout>
+                <Settings />
               </DashboardLayout>
             }
           />

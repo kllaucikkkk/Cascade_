@@ -60,6 +60,7 @@
 }
 
 .section-4__currency-card {
+  position: relative;
   width: 440px;
   padding: 32px;
   background: #F9F9F9;
@@ -71,6 +72,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
+  position: relative;
 }
 
 .section-4__currency-icon {
@@ -111,6 +113,11 @@
   color: #86868B;
 }
 
+.section-4__currency-input[readonly] {
+  background: #ececec;
+  cursor: not-allowed;
+}
+
 .section-4__swap-icon {
   display: flex;
   align-items: center;
@@ -127,17 +134,42 @@
   transform: rotate(180deg);
 }
 
+.section-4__dropdown {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 32px rgba(232,64,78,.12);
+  min-width: 120px;
+  z-index: 99;
+  padding: 6px 0;
+  text-align: left;
+}
+
+.section-4__dropdown-item {
+  padding: 12px 22px;
+  cursor: pointer;
+  font-size: 17px;
+  color: #1d1d1f;
+  transition: background 0.15s;
+}
+
+.section-4__dropdown-item:hover {
+  background: #f6e8ec;
+}
+
 @media (max-width: 1024px) {
   .section-4__heading {
     font-size: 72px;
     line-height: 80px;
   }
-  
+
   .section-4__converter {
     flex-direction: column;
     gap: 24px;
   }
-  
+
   .section-4__currency-card {
     width: 100%;
     max-width: 440px;
@@ -149,12 +181,12 @@
     font-size: 48px;
     line-height: 56px;
   }
-  
+
   .section-4__description {
     font-size: 16px;
     line-height: 24px;
   }
-  
+
   .section-4__currency-input {
     font-size: 36px;
   }

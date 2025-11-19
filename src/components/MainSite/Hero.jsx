@@ -72,7 +72,7 @@ function Hero() {
             <span className="heading-line">
               <span className="word light">Zarządzaj</span>
               <ContainerTextFlip 
-                words={['pieniędzmi', 'budżetem', 'oszczędnościami']}
+                words={['pieniędzmi', 'budżetem', 'zasobami']}
                 interval={3000}
                 animationDuration={700}
               />

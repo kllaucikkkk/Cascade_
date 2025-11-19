@@ -18,6 +18,7 @@ export const FloatingNav = ({ navItems }) => {
   const handleMouseLeave = () => {
     timerRef.current = setTimeout(() => {
       setHoverIdx(null);
+      setDropdownHoverIdx(null);
     }, 200);
   };
 
@@ -46,10 +47,28 @@ export const FloatingNav = ({ navItems }) => {
     if (!items) return '0px';
 
     const itemCount = items.length;
-    if (itemCount <= 2) return '144px'; // Base size
-    if (itemCount === 4) return '288px'; // 2x
-    if (itemCount === 5) return '250px'; // 2.5x
-    return '144px'; // Domyślna wysokość
+    if (itemCount <= 2) return '144px';
+    if (itemCount === 4) return '288px';
+    if (itemCount === 5) return '250px';
+    return '144px';
+  };
+
+  // Funkcja do obsługi ruchu myszy nad lewą częścią panelu
+  const handleMouseMoveOnLeftArea = (e, idx) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const y = e.clientY - rect.top;
+    
+    const items = dropdowns[idx];
+    const itemHeight = 34; // ~22px tekst + 12px gap
+    const startOffset = 20; // Padding od góry
+    
+    const hoveredIndex = Math.floor((y - startOffset) / itemHeight);
+    
+    if (hoveredIndex >= 0 && hoveredIndex < items.length) {
+      setDropdownHoverIdx(hoveredIndex);
+    } else {
+      setDropdownHoverIdx(null);
+    }
   };
 
   return (
@@ -87,7 +106,7 @@ export const FloatingNav = ({ navItems }) => {
               color: "#fff",
               borderRadius: "32px 32px 0 0",
               boxShadow: "0 -10px 40px rgba(0,0,0,0.14)",
-              padding: "20px 40px 22px 30px", // Zmniejszony górny padding o kolejne 10px
+              padding: "20px 40px 22px 30px",
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
@@ -98,11 +117,61 @@ export const FloatingNav = ({ navItems }) => {
               zIndex: 5000,
               pointerEvents: "auto",
               transition: 'height 0.2s ease-out',
+              overflow: "visible",
             }}
             onMouseEnter={() => handleMouseEnter(hoverIdx)}
           >
+            {/* Niewidoczny obszar aktywny (lewa strona do wyimaginowanej linii) */}
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '60%', // Do wyimaginowanej linii
+                height: '100%',
+                zIndex: 2,
+                cursor: 'pointer',
+              }}
+              onMouseMove={(e) => handleMouseMoveOnLeftArea(e, hoverIdx)}
+              onMouseLeave={() => setDropdownHoverIdx(null)}
+            />
+
+            {/* Kwadrat 90x90px w prawym górnym rogu */}
+            {dropdownHoverIdx !== null && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '12px',
+                  right: '12px',
+                  width: '90px',
+                  height: '90px',
+                  background: '#fff',
+                  borderRadius: '24px',
+                  transition: 'opacity 0.2s ease-in-out',
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }}
+              />
+            )}
+
             {dropdowns[hoverIdx].map((item, index) => (
-              <a key={index} href={item.link} onClick={handleLinkClick} onMouseEnter={() => setDropdownHoverIdx(index)} onMouseLeave={() => setDropdownHoverIdx(null)} style={{ opacity: dropdownHoverIdx === index ? 1 : 0.85, transform: dropdownHoverIdx === index ? 'translateX(12px)' : 'translateX(0)', transition: 'transform 0.2s ease-out, opacity 0.2s ease-out', color: '#ffffff', textDecoration: 'none', cursor: 'pointer' }}>
+              <a 
+                key={index} 
+                href={item.link} 
+                onClick={handleLinkClick} 
+                onMouseEnter={() => setDropdownHoverIdx(index)} 
+                onMouseLeave={() => setDropdownHoverIdx(null)} 
+                style={{ 
+                  position: 'relative',
+                  zIndex: 3,
+                  opacity: dropdownHoverIdx === index ? 1 : 0.85, 
+                  transform: dropdownHoverIdx === index ? 'translateX(12px)' : 'translateX(0)', 
+                  transition: 'transform 0.2s ease-out, opacity 0.2s ease-out', 
+                  color: '#ffffff', 
+                  textDecoration: 'none', 
+                  cursor: 'pointer' 
+                }}
+              >
                 {item.name}
               </a>
             ))}
